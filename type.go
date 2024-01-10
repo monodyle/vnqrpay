@@ -2,23 +2,16 @@ package vnqrpay
 
 type VietQRStatus int
 
-const (
-	VietQRNotSupported = -1
-	VietQRReceiveOnly  = 0
-	VietQRSupported    = 1
-)
-
 type QRProvider string
 
-const (
-	VietQRProvider QRProvider = "VIETQR"
-	VNPayProvider  QRProvider = "VNPAY"
-)
+type QRProviderGUID string
+
+type QRFieldID string
 
 type Provider struct {
 	FieldID string
 	Name    QRProvider
-	GUID    string
+	GUID    QRProviderGUID
 	Service string
 }
 
@@ -45,10 +38,41 @@ type Bank struct {
 	Keywords        string
 }
 
+type Consumer struct {
+	BankBin    string
+	BankNumber string
+}
+
+type AdditionalDataID string
+
+type AdditionalData struct {
+	BillNumber    string
+	MobileNumber  string
+	Store         string
+	LoyaltyNumber string
+	Reference     string
+	CustomerLabel string
+	Terminal      string
+	Purpose       string
+	DataRequest   string
+}
+
 type QRPay struct {
 	IsValid    bool
 	Version    string
 	InitMethod string
 	Provider
 	Merchant
+	Consumer
+	Category         string
+	Currency         string
+	Amount           string
+	TipAndFeeType    string
+	TipAndFeeAmount  string
+	TipAndFeePercent string
+	Nation           string
+	City             string
+	ZipCode          string
+	AdditionalData
+	CRC string
 }

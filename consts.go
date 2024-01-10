@@ -1,6 +1,53 @@
 package vnqrpay
 
 const (
+	VietQRNotSupported = -1
+	VietQRReceiveOnly  = 0
+	VietQRSupported    = 1
+)
+
+const (
+	VietQRProvider QRProvider = "VIETQR"
+	VNPayProvider  QRProvider = "VNPAY"
+)
+
+const (
+	FieldVersion          QRFieldID = "00"
+	FieldInitMethod       QRFieldID = "01"
+	FieldVNPayQR          QRFieldID = "26"
+	FieldVietQR           QRFieldID = "38"
+	FieldCategory         QRFieldID = "52"
+	FieldCurrency         QRFieldID = "53"
+	FieldAmount           QRFieldID = "54"
+	FieldTipAndFeeType    QRFieldID = "55"
+	FieldTipAndFeeAmount  QRFieldID = "56"
+	FieldTipAndFeePercent QRFieldID = "56"
+	FieldNation           QRFieldID = "58"
+	FieldMerchantName     QRFieldID = "59"
+	FieldCity             QRFieldID = "60"
+	FieldZipCode          QRFieldID = "61"
+	FieldAdditionalData   QRFieldID = "62"
+	FieldCRC              QRFieldID = "63"
+)
+
+const (
+	VNPayGUID  QRProviderGUID = "A000000775"
+	VietQRGUID QRProviderGUID = "A000000727"
+)
+
+const (
+	ADID_BillNumber                    AdditionalDataID = "01"
+	ADID_MobileNumber                  AdditionalDataID = "02"
+	ADID_StoreLabel                    AdditionalDataID = "03"
+	ADID_LoyaltyNumber                 AdditionalDataID = "04"
+	ADID_ReferenceLabel                AdditionalDataID = "05"
+	ADID_CustomerLabel                 AdditionalDataID = "06"
+	ADID_TerminalPurpose               AdditionalDataID = "07"
+	ADID_PurposeOfTransaction          AdditionalDataID = "08"
+	ADID_AdditionalConsumerDataRequest AdditionalDataID = "09"
+)
+
+const (
 	ABBankKey                BankKey = "abbank"
 	ACBKey                   BankKey = "acb"
 	AgribankKey              BankKey = "agribank"
