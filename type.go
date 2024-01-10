@@ -4,12 +4,14 @@ type VietQRStatus int
 
 type QRProvider string
 
+type QRProviderFieldID string
+
 type QRProviderGUID string
 
 type QRFieldID string
 
 type Provider struct {
-	FieldID string
+	FieldID QRFieldID
 	Name    QRProvider
 	GUID    QRProviderGUID
 	Service string
@@ -37,6 +39,8 @@ type Bank struct {
 	SwiftCode       BankSwiftCode
 	Keywords        string
 }
+
+type VietQRConsumerID string
 
 type Consumer struct {
 	BankBin    string

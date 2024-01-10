@@ -21,7 +21,7 @@ const (
 	FieldAmount           QRFieldID = "54"
 	FieldTipAndFeeType    QRFieldID = "55"
 	FieldTipAndFeeAmount  QRFieldID = "56"
-	FieldTipAndFeePercent QRFieldID = "56"
+	FieldTipAndFeePercent QRFieldID = "57"
 	FieldNation           QRFieldID = "58"
 	FieldMerchantName     QRFieldID = "59"
 	FieldCity             QRFieldID = "60"
@@ -31,20 +31,31 @@ const (
 )
 
 const (
+	ProviderFieldGUID    QRProviderFieldID = "00"
+	ProviderFieldData    QRProviderFieldID = "01"
+	ProviderFieldService QRProviderFieldID = "02"
+)
+
+const (
 	VNPayGUID  QRProviderGUID = "A000000775"
 	VietQRGUID QRProviderGUID = "A000000727"
 )
 
 const (
-	ADID_BillNumber                    AdditionalDataID = "01"
-	ADID_MobileNumber                  AdditionalDataID = "02"
-	ADID_StoreLabel                    AdditionalDataID = "03"
-	ADID_LoyaltyNumber                 AdditionalDataID = "04"
-	ADID_ReferenceLabel                AdditionalDataID = "05"
-	ADID_CustomerLabel                 AdditionalDataID = "06"
-	ADID_TerminalPurpose               AdditionalDataID = "07"
-	ADID_PurposeOfTransaction          AdditionalDataID = "08"
-	ADID_AdditionalConsumerDataRequest AdditionalDataID = "09"
+	AdditionalDataBillNumber                    AdditionalDataID = "01"
+	AdditionalDataMobileNumber                  AdditionalDataID = "02"
+	AdditionalDataStoreLabel                    AdditionalDataID = "03"
+	AdditionalDataLoyaltyNumber                 AdditionalDataID = "04"
+	AdditionalDataReferenceLabel                AdditionalDataID = "05"
+	AdditionalDataCustomerLabel                 AdditionalDataID = "06"
+	AdditionalDataTerminalPurpose               AdditionalDataID = "07"
+	AdditionalDataPurposeOfTransaction          AdditionalDataID = "08"
+	AdditionalDataAdditionalConsumerDataRequest AdditionalDataID = "09"
+)
+
+const (
+	VietQRBankBin    VietQRConsumerID = "00"
+	VietQRBankNumber VietQRConsumerID = "01"
 )
 
 const (
