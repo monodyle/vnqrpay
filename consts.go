@@ -48,7 +48,7 @@ const (
 	AdditionalDataLoyaltyNumber                 AdditionalDataID = "04"
 	AdditionalDataReferenceLabel                AdditionalDataID = "05"
 	AdditionalDataCustomerLabel                 AdditionalDataID = "06"
-	AdditionalDataTerminalPurpose               AdditionalDataID = "07"
+	AdditionalDataTerminalLabel                 AdditionalDataID = "07"
 	AdditionalDataPurposeOfTransaction          AdditionalDataID = "08"
 	AdditionalDataAdditionalConsumerDataRequest AdditionalDataID = "09"
 )
@@ -56,6 +56,11 @@ const (
 const (
 	VietQRBankBin    VietQRConsumerID = "00"
 	VietQRBankNumber VietQRConsumerID = "01"
+)
+
+const (
+	VietQRByAccountNumber VietQRService = "QRIBFTTA" // Dịch vụ chuyển nhanh NAPAS247 đến Tài khoản
+	VietQRByCardNumber    VietQRService = "QRIBFTTC" // Dịch vụ chuyển nhanh NAPAS247 đến Thẻ
 )
 
 const (

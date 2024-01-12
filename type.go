@@ -50,24 +50,24 @@ type Consumer struct {
 type AdditionalDataID string
 
 type AdditionalData struct {
+	Store         string
+	Terminal      string
 	BillNumber    string
 	MobileNumber  string
-	Store         string
 	LoyaltyNumber string
 	Reference     string
 	CustomerLabel string
-	Terminal      string
 	Purpose       string
 	DataRequest   string
 }
 
 type QRPay struct {
-	IsValid    bool
-	Version    string
-	InitMethod string
-	Provider
-	Merchant
-	Consumer
+	IsValid          bool
+	Version          string
+	InitMethod       string
+	Provider         Provider
+	Merchant         Merchant
+	Consumer         Consumer
 	Category         string
 	Currency         string
 	Amount           string
@@ -77,6 +77,20 @@ type QRPay struct {
 	Nation           string
 	City             string
 	ZipCode          string
-	AdditionalData
-	CRC string
+	AdditionalData   AdditionalData
+	CRC              string
+}
+
+type VietQRService string
+
+type VietQROptions struct {
+	Consumer Consumer
+	Amount   string
+	Purpose  string
+	Service  VietQRService
+}
+
+type VNPayOptions struct {
+	Merchant       Merchant
+	AdditionalData AdditionalData
 }
