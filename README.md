@@ -4,7 +4,7 @@
 
 <img src=".github/qr.png" height="128" align="right" />
 
-The library helps you to encode/decode QR code of VietQR/VNPay. Converted to go from the original repo [xuannghia/vietnam-qr-pay]
+The library helps you to encode/decode QR code of VietQR/VNPay. Converted to go from the original typescript repository [xuannghia/vietnam-qr-pay]
 
 [xuannghia/vietnam-qr-pay]: https://github.com/xuannghia/vietnam-qr-pay/
 
