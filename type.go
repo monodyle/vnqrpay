@@ -14,7 +14,7 @@ type Provider struct {
 	FieldID QRFieldID
 	Name    QRProvider
 	GUID    QRProviderGUID
-	Service string
+	Service VietQRService
 }
 
 type Merchant struct {
@@ -92,5 +92,6 @@ type VietQROptions struct {
 
 type VNPayOptions struct {
 	Merchant       Merchant
+	Amount         string
 	AdditionalData AdditionalData
 }

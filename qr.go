@@ -54,7 +54,7 @@ func (qr *QRPay) Build() (content string, err error) {
 		providerDataContent = defaultStrValue(qr.Merchant.ID, "")
 	}
 	provider := combineFieldData(QRFieldID(ProviderFieldData), providerDataContent)
-	service := combineFieldData(QRFieldID(ProviderFieldService), qr.Provider.Service)
+	service := combineFieldData(QRFieldID(ProviderFieldService), fmt.Sprint(qr.Provider.Service))
 	providerData := combineFieldData(qr.Provider.FieldID, guid+provider+service)
 
 	category := combineFieldData(FieldCategory, qr.Category)
@@ -89,12 +89,40 @@ func (qr *QRPay) Build() (content string, err error) {
 }
 
 func CreateVietQR(opts VietQROptions) (qr *QRPay, err error) {
-	//
+	qr = &QRPay{}
+	if opts.Amount != "" {
+		qr.InitMethod = "12"
+	} else {
+		qr.InitMethod = "11"
+	}
+
+	qr.Provider.FieldID = FieldVietQR
+	qr.Provider.GUID = VietQRGUID
+	qr.Provider.Name = VietQRProvider
+
+	if opts.Service == "" {
+		qr.Provider.Service = VietQRByAccountNumber
+	} else {
+		qr.Provider.Service = opts.Service
+	}
+
+	qr.Consumer = opts.Consumer
+	qr.Amount = opts.Amount
+	qr.AdditionalData.Purpose = opts.Purpose
+
 	return
 }
 
 func CreateVNPay(opts VNPayOptions) (qr *QRPay, err error) {
-	//
+	qr = &QRPay{}
+	qr.Merchant.ID = opts.Merchant.ID
+	qr.Merchant.Name = opts.Merchant.Name
+	qr.Provider.FieldID = FieldVNPayQR
+	qr.Provider.GUID = VNPayGUID
+	qr.Provider.Name = VNPayProvider
+	qr.Amount = opts.Amount
+	qr.AdditionalData = opts.AdditionalData
+
 	return
 }
 
@@ -205,7 +233,7 @@ func (qr *QRPay) parseProviderInfo(content string) error {
 			}
 		}
 	case ProviderFieldService:
-		qr.Provider.Service = value
+		qr.Provider.Service = VietQRService(value)
 	}
 
 	if len(nextValue) > 4 {
