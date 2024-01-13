@@ -1,7 +1,6 @@
 # Vietnam QRPay Golang
 
-<img src=".github/vietqr.png" height="25" />
-<img src=".github/vnpay.png" height="19" />
+<img src=".github/vietqr.png" height="25" /> <img src=".github/vnpay.png" height="19" />
 
 <img src=".github/qr.png" height="128" align="right" />
 
