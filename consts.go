@@ -117,7 +117,7 @@ const (
 	VietBankKey              BankKey = "vietbank"
 	VietCapitalBankKey       BankKey = "banviet"
 	VietcomBankKey           BankKey = "vietcombank"
-	ViettinBankKey           BankKey = "vietinbank"
+	VietinBankKey            BankKey = "vietinbank"
 	VPBankKey                BankKey = "vpbank"
 	VRBKey                   BankKey = "vrb"
 	WooriBankKey             BankKey = "wooribank"
@@ -177,7 +177,7 @@ const (
 	VietBankCode              BankCode = "VBB"
 	VietCapitalBankCode       BankCode = "BVB"
 	VietcomBankCode           BankCode = "VCB"
-	ViettinBankCode           BankCode = "CTG"
+	VietinBankCode            BankCode = "CTG"
 	VPBankCode                BankCode = "VPB"
 	VRBCode                   BankCode = "VRB"
 	WooriBankCode             BankCode = "WRB"
@@ -225,7 +225,7 @@ const (
 	VietBankSwiftCode              BankSwiftCode = "VNTTVNVX"
 	VietCapitalBankSwiftCode       BankSwiftCode = "VCBCVNVX"
 	VietcomBankSwiftCode           BankSwiftCode = "BFTVVNVX"
-	ViettinBankSwiftCode           BankSwiftCode = "ICBVVNVX"
+	VietinBankSwiftCode            BankSwiftCode = "ICBVVNVX"
 	VPBankSwiftCode                BankSwiftCode = "VPBKVNVX"
 )
 
@@ -776,16 +776,16 @@ var Banks = map[BankKey]Bank{
 		LookupSupported: 1,
 		SwiftCode:       VietcomBankSwiftCode,
 	},
-	ViettinBankKey: {
-		Key:             ViettinBankKey,
-		Code:            ViettinBankCode,
+	VietinBankKey: {
+		Key:             VietinBankKey,
+		Code:            VietinBankCode,
 		Name:            "Ngân hàng TMCP Công thương Việt Nam",
 		Bin:             "970415",
 		ShortName:       "VietinBank",
 		VietQRStatus:    VietQRSupported,
 		LookupSupported: 1,
-		SwiftCode:       ViettinBankSwiftCode,
-		Keywords:        "viettin",
+		SwiftCode:       VietinBankSwiftCode,
+		Keywords:        "vietin",
 	},
 	VPBankKey: {
 		Key:             VPBankKey,
